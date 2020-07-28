@@ -4,6 +4,7 @@
   "description": "",
   "main": "./dist/app.js",
   "scripts": {
+    "setup": "npm install -a && echo {\"token\": \"\", \"prefix\": \"!\"} > ./src/config/servant.json",
     "start": "tsc && node ./dist/app.js"
   },
   "keywords": [],
