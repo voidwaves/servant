@@ -1,9 +1,14 @@
 
-import * as Discord from 'discord.js'
 import { ResolverFn } from '../types/common'
+import { Message } from 'discord.js'
 
-const hello: ResolverFn =  (_message: Discord.Message, _args: string[]) => {
-    return 'Well hello there!'
+const hello: ResolverFn =  (_message: Message, _args: string[]) => {
+    return {
+        text: 'Well hello there!',
+        help: {
+            helpText: '............'
+        }
+    }
 }
 
 export default hello

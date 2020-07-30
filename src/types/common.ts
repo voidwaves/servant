@@ -1,5 +1,12 @@
+import { MessageEmbed, Message } from "discord.js"
 
-import * as Discord from 'discord.js'
-
-export type ResolverFn = (message: Discord.Message, args: string[]) => string
-export type ResolverList = {command: string, handler: ResolverFn}[]
+export type ResolverResult = {
+    text: string, 
+    options?: MessageEmbed
+    help?: {
+        helpText: string,
+        helpOptions?: MessageEmbed
+    }
+}
+export type ResolverFn = (message: Message, args: string[]) => ResolverResult
+export type ResolverList = {command: string, description: string, handler: ResolverFn}[]
